@@ -8,7 +8,7 @@
 // depunerea planului de zbor
 // autorizatia ATC
 
-//import java.lang.reflect.Executable;
+import java.lang.reflect.Executable;
 
 class FuelException extends Exception
 {
@@ -155,12 +155,47 @@ class Avion
         if (!doorsClosed)
             throw new DoorsOpenException();
         
+        if (totalWeight > MTOW)
+            throw new OverweightException(totalWeight, MTOW);
         
+        if (!systemsOK)
+            throw new AircraftSystemsException();
+        
+        if (tirePressure < MIN_TIRE_PRESSURE)
+            throw new LowTirePressureException(tirePressure);
+        
+        if (!weatherChecked)
+            throw new WeatherException();
+        
+        if (!FPLFilled)
+            throw new FPLNotFilledException();
+        
+        if (!ATCCleared)
+            throw new ATCNotClearedException();
+        
+        System.out.println("Avionul este pregatit pentru zbor.");
     }
-
-    
 }
 
 public class PregatireZbor {
-    
+    public static void main(String[] args) {
+        Avion ROT123 = new Avion(true, true, 45, 28000, true, 210, true, true, true);
+
+        try 
+        {
+            executaVerificare(ROT123);
+        } catch (Exception e) 
+        {
+            System.out.println("Au fost identificate urmatoarele probleme: ");
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public static void executaVerificare(Avion a) throws FuelException, PilotAbsenceException, DoorsOpenException,
+                                OverweightException, AircraftSystemsException, WeatherException,
+                                LowTirePressureException, FPLNotFilledException, ATCNotClearedException
+    {
+        a.pregatireAeronava();
+    }
 }
