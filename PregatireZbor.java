@@ -8,7 +8,7 @@
 // depunerea planului de zbor
 // autorizatia ATC
 
-import java.lang.reflect.Executable;
+//import java.lang.reflect.Executable;
 
 class FuelException extends Exception
 {
@@ -124,6 +124,41 @@ class Avion
     private boolean     weatherChecked;
     private boolean     FPLFilled;
     private boolean     ATCCleared;
+
+    private static final int MTOW = 75000;
+    private static final int MIN_TIRE_PRESSURE = 200;
+
+    public Avion(boolean pilotPresent, boolean doorsClosed, int fuelLevel, int totalWeight, boolean systemsOK,
+                    int tirePressure, boolean weatherChecked, boolean FPLFilled, boolean ATCCleared)
+    {
+        this.pilotPresent = pilotPresent;
+        this.doorsClosed = doorsClosed;
+        this.fuelLevel = fuelLevel;
+        this.totalWeight = totalWeight;
+        this.systemsOK = systemsOK;
+        this.tirePressure = tirePressure;
+        this.weatherChecked = weatherChecked;
+        this.FPLFilled = FPLFilled;
+        this.ATCCleared = ATCCleared;
+    }
+    
+    public void pregatireAeronava() throws FuelException, PilotAbsenceException, DoorsOpenException,
+                                OverweightException, AircraftSystemsException, WeatherException,
+                                LowTirePressureException, FPLNotFilledException, ATCNotClearedException
+    {
+        if (fuelLevel < 30)
+            throw new FuelException(fuelLevel);
+        
+        if (!pilotPresent)
+            throw new PilotAbsenceException();
+        
+        if (!doorsClosed)
+            throw new DoorsOpenException();
+        
+        
+    }
+
+    
 }
 
 public class PregatireZbor {
