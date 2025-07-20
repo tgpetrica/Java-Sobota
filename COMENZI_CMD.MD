@@ -60,6 +60,14 @@ Exemplu:
 
 > Vei ajunge in C:\Utilizatori\Morgan
 
+## `code .`
+Deschide folderul curent in VS Code
+
+```cmd
+code .
+```
+
+
 ## `notepad`
 Deschide fisierul transmis ca parametru in Notepad. Daca nu exista, il creeaza.
 
