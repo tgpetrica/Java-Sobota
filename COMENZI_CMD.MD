@@ -46,7 +46,7 @@ Ramane in directorul actual. (Nu are o functionalitate vizibila/practica)
 cd .
 ```
 
-## `cd ...`
+## `cd ..`
 Intoarce in directorul parinte (cu un nivel mai sus)
 
 ```cmd
