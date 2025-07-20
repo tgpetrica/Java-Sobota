@@ -267,3 +267,18 @@ Inchide un proces (cu Process ID) fortat
 ```cmd
 taskkill /PID 6148 /F
 ```
+
+## `shutdown`
+Inchide computerul
+
+```cmd
+shutdown /s /f /t 15
+```
+
+`/s` - shutdown
+
+`/f` - inchide fortat toate aplicatiile care ruleaza
+
+`/t 15` - time delay (in secunde); sistemul se va inchide in 15 secunde
+
+Daca a fost executata o inchidere a sistemului programata si se doreste inchiderea imediata, se poate rula `shutdown /a`
