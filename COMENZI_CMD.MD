@@ -243,19 +243,15 @@ Afiseaza toate procesele care ruleaza
 tasklist
 ```
 
-> Image Name                     PID Session Name        Session#    Mem Usage
-
-> ========================= ======== ================ =========== ============
-
-> System Idle Process              0 Services                   0          8 K
-
-> System                           4 Services                   0     13,512 K
-
-> Secure System                   72 Services                   0     40,344 K
-
-> Registry                       132 Services                   0    110,444 K
-
-> mini-metars.exe               6148 Console                   10     42,404 K
+```txt
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0     13,512 K
+Secure System                   72 Services                   0     40,344 K
+Registry                       132 Services                   0    110,444 K
+mini-metars.exe               6148 Console                   10     42,404 K
+```
 
 ## `taskkill /PID`
 Inchide un proces (cu Process ID)
