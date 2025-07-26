@@ -46,7 +46,7 @@ Ramane in directorul actual. (Nu are o functionalitate vizibila/practica)
 cd .
 ```
 
-## `cd ...`
+## `cd ..`
 Intoarce in directorul parinte (cu un nivel mai sus)
 
 ```cmd
@@ -59,6 +59,14 @@ Exemplu:
 > cd ..
 
 > Vei ajunge in C:\Utilizatori\Morgan
+
+## `code .`
+Deschide folderul curent in VS Code
+
+```cmd
+code .
+```
+
 
 ## `notepad`
 Deschide fisierul transmis ca parametru in Notepad. Daca nu exista, il creeaza.
